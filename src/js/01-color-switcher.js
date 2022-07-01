@@ -7,8 +7,8 @@ const btnStop = document.querySelector('[data-stop]');
 
 let timerId = null;
 
-changeBodyColor = event => {
-    event.currentTarget.disabled = true;
+const changeBodyColor = () => {
+    btnStart.disabled = true;
     timerId = setInterval(() => {
         const currentColor = getRandomHexColor();
         document.body.style.backgroundColor = currentColor;
@@ -16,7 +16,7 @@ changeBodyColor = event => {
 };
 btnStart.addEventListener('click', changeBodyColor);
 
-stopChangeBodyColor = () => {
+const stopChangeBodyColor = () => {
     clearInterval(timerId);
     btnStart.disabled = false;
 };
